@@ -68,6 +68,9 @@ class SignUpViewController: UIViewController {
             defaults.setValue("\(birthdayTextField.text ?? "Empty")", forKey: "Birthday")
             defaults.setValue("\(birthTimeTextField.text ?? "Empty")", forKey: "BirthTime")
             
+            //print(defaults.string(forKey: "UserID") ?? "Boş ID")
+            //print(defaults.string(forKey: "Password") ?? "Boş Password")
+            
             showSuccessAlert()
         } else {
             showIncompleteAlert()

@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     let defaults = UserDefaults()
-    let savedUserID = UserDefaults.standard.string(forKey: "UserID")
-    let savedPassword = UserDefaults.standard.string(forKey: "Password")
-    let savedBirthday = UserDefaults.standard.string(forKey: "Birthday")
-    let savedBirthTime = UserDefaults.standard.string(forKey: "BirthTime")
+    var savedUserID: String?
+    var savedPassword: String?
+    var savedBirthday: String?
+    var savedBirthTime: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,16 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        savedUserID = UserDefaults.standard.string(forKey: "UserID")
+        savedPassword = UserDefaults.standard.string(forKey: "Password")
+        savedBirthday = UserDefaults.standard.string(forKey: "Birthday")
+        savedBirthTime = UserDefaults.standard.string(forKey: "BirthTime")
+        
+        userIdTextField.text = ""
+        passwordTextField.text = ""
+        
+        //print(defaults.string(forKey: "UserID") ?? "Boş ID")
+        //print(defaults.string(forKey: "Password") ?? "Boş Password")
         
     }
     
