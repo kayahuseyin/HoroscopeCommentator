@@ -18,7 +18,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdT-ZP-jDh">
                                 <rect key="frame" x="40" y="463" width="313" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT0-Q7-sSd">
                                 <rect key="frame" x="157" y="567" width="79" height="35"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="O41-Ls-sYZ">
-                                <rect key="frame" x="76.666666666666686" y="153" width="240.00000000000006" height="216"/>
+                                <rect key="frame" x="76.666666666666686" y="153" width="240" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="EVa-wG-XNE"/>
                                     <constraint firstAttribute="height" constant="216" id="UUQ-bP-ZWO"/>
@@ -51,7 +51,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cus-tW-j9T">
                                 <rect key="frame" x="40" y="399" width="313" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horoscope Commentator " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMf-8o-LGf">
                                 <rect key="frame" x="82.666666666666686" y="123" width="228" height="24"/>
@@ -196,10 +196,69 @@
                     <view key="view" contentMode="scaleToFill" id="Gd4-SH-0xW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upB-g7-JXj">
+                                <rect key="frame" x="134.66666666666666" y="163" width="123.99999999999997" height="24"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah6-JW-t1x">
+                                <rect key="frame" x="69.666666666666686" y="683" width="254" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="See our comment for your day">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.43137254899999999" green="0.1764705882" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9IK-iz-8AT"/>
+                                    <action selector="signUpButtonTapped:" destination="EOt-OQ-Jia" eventType="touchUpInside" id="n3Y-Hw-x7h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-Od-sDl" userLabel="BirthTime Label">
+                                <rect key="frame" x="166" y="400" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/08/2003" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8L-rF-Tus">
+                                <rect key="frame" x="120.00000000000001" y="337" width="153.33333333333337" height="33"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="raS-CN-8KN"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.0039215686269999999" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6IY-Od-sDl" firstAttribute="centerX" secondItem="Gd4-SH-0xW" secondAttribute="centerX" id="Cdb-ue-yEd"/>
+                            <constraint firstItem="raS-CN-8KN" firstAttribute="bottom" secondItem="Ah6-JW-t1x" secondAttribute="bottom" constant="100" id="GrH-yt-zm5"/>
+                            <constraint firstItem="Ah6-JW-t1x" firstAttribute="centerX" secondItem="Gd4-SH-0xW" secondAttribute="centerX" id="JEY-xo-zPg"/>
+                            <constraint firstItem="M8L-rF-Tus" firstAttribute="centerX" secondItem="Gd4-SH-0xW" secondAttribute="centerX" id="PTT-CD-Mkm"/>
+                            <constraint firstItem="upB-g7-JXj" firstAttribute="top" secondItem="raS-CN-8KN" secondAttribute="top" constant="60" id="RwO-zH-lYj"/>
+                            <constraint firstItem="upB-g7-JXj" firstAttribute="centerX" secondItem="Gd4-SH-0xW" secondAttribute="centerX" id="WGa-OI-MOi"/>
+                            <constraint firstItem="M8L-rF-Tus" firstAttribute="top" secondItem="upB-g7-JXj" secondAttribute="bottom" constant="150" id="Wyy-im-lZX"/>
+                            <constraint firstItem="6IY-Od-sDl" firstAttribute="top" secondItem="M8L-rF-Tus" secondAttribute="bottom" constant="30" id="jzh-Dd-z7d"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1AD-Px-Sb3"/>
+                    <navigationItem key="navigationItem" id="1AD-Px-Sb3">
+                        <barButtonItem key="rightBarButtonItem" id="lzj-Zv-rpe">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mJp-qf-tiI">
+                                <rect key="frame" x="287" y="5" width="90" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="ofr-Ji-FRW" eventType="touchUpInside" id="Ztm-Lp-8rU"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="birthTimeLabel" destination="6IY-Od-sDl" id="ndl-bF-2Bz"/>
+                        <outlet property="birthdayLabel" destination="M8L-rF-Tus" id="55g-uB-nMG"/>
+                        <outlet property="welcomeLabel" destination="upB-g7-JXj" id="nqE-rN-4K5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dq-41-0I6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -41,7 +41,7 @@ class SignUpViewController: UIViewController {
     
     @objc func showDate(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         let enteredDate = dateFormatter.string(from: datePicker.date)
         
         birthdayTextField.text = enteredDate
@@ -63,11 +63,11 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
         if userIdTextField.hasText && passwordTextField.hasText && birthdayTextField.hasText && birthTimeTextField.hasText {
-            //defaults.setValue("\(userIdTextField.text ?? "Empty")", forKey: "UserID")
-            //defaults.setValue("\(passwordTextField.text ?? "Empty")", forKey: "Password")
-            //defaults.setValue("\(birthdayTextField.text ?? "Empty")", forKey: "Birthday")
-            //defaults.setValue("\(birthTimeTextField.text ?? "Empty")", forKey: "BirthTime")
-            print("merhaba")
+            defaults.setValue("\(userIdTextField.text ?? "Empty")", forKey: "UserID")
+            defaults.setValue("\(passwordTextField.text ?? "Empty")", forKey: "Password")
+            defaults.setValue("\(birthdayTextField.text ?? "Empty")", forKey: "Birthday")
+            defaults.setValue("\(birthTimeTextField.text ?? "Empty")", forKey: "BirthTime")
+            
             showSuccessAlert()
         } else {
             showIncompleteAlert()
