@@ -30,8 +30,8 @@ class SignUpViewController: UIViewController {
         timePicker?.datePickerMode = .time
         birthTimeTextField.inputView = timePicker
         
-        datePicker?.addTarget(self, action: #selector(self.showDate(datePicker:)), for: .valueChanged)
-        timePicker?.addTarget(self, action: #selector(self.showTime(timePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(handlePickerChange(_:)), for: .valueChanged)
+        timePicker?.addTarget(self, action: #selector(handlePickerChange(_:)), for: .valueChanged)
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
@@ -39,22 +39,16 @@ class SignUpViewController: UIViewController {
         
     }
     
-    @objc func showDate(datePicker: UIDatePicker) {
+    @objc func handlePickerChange(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let enteredDate = dateFormatter.string(from: datePicker.date)
-        
-        birthdayTextField.text = enteredDate
+        if sender == datePicker {
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            birthdayTextField.text = dateFormatter.string(from: sender.date)
+        } else if sender == timePicker {
+            dateFormatter.dateFormat = "HH:mm"
+            birthTimeTextField.text = dateFormatter.string(from: sender.date)
+        }
     }
-    
-    @objc func showTime(timePicker: UIDatePicker) {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm"
-        let enteredTime = timeFormatter.string(from: timePicker.date)
-        
-        birthTimeTextField.text = enteredTime
-    }
-    
     @objc func handleTap() {
         view.endEditing(true)
     }
@@ -62,7 +56,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
-        if userIdTextField.hasText && passwordTextField.hasText && birthdayTextField.hasText && birthTimeTextField.hasText {
+        if userIdTextField.hasText  && passwordTextField.hasText && birthdayTextField.hasText && birthTimeTextField.hasText {
             defaults.setValue("\(userIdTextField.text ?? "Empty")", forKey: "UserID")
             defaults.setValue("\(passwordTextField.text ?? "Empty")", forKey: "Password")
             defaults.setValue("\(birthdayTextField.text ?? "Empty")", forKey: "Birthday")
